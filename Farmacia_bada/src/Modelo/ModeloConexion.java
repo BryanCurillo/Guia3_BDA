@@ -4,43 +4,68 @@
  */
 package Modelo;
 
-import com.sun.jdi.connect.spi.Connection;
-import java.io.IOException;
+import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
-import javax.swing.JOptionPane;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author Danie
  */
 public class ModeloConexion {
-    
+
     private final String DRIVER = "oracle.jdbc.driver.OracleDriver";
-    private final String URL = "jdbc:oracle:thin:@//localhost:1521/XE";
-    private final String USER = "danieland";
+    private final String URL = "jdbc:oracle:thin:@localhost:1521:XE";
+    private final String USER = "bryanGuia3";
     private final String PASWORD = "1234";
 
-    public Connection cadena;
+    private Connection con;
 
     public ModeloConexion() {
-         this.cadena = null;
-    }
-
-    public Connection conectar() {
         try {
             Class.forName(DRIVER);
-            this.cadena = (Connection) DriverManager.getConnection(URL, USER, PASWORD);
-
-        } catch (ClassNotFoundException | SQLException e) {
-            JOptionPane.showMessageDialog(null, e.getMessage());
-            System.exit(0);
+            con = DriverManager.getConnection(URL, USER, PASWORD);
+            System.out.println("conexion exitosa");
+        } catch (ClassNotFoundException | SQLException ex) {
+            System.out.println("error: "+ex.getLocalizedMessage());
+            Logger.getLogger(ModeloConexion.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return this.cadena;
 
     }
 
-    public void desconectar() throws IOException {
-        this.cadena.close();
+    public ResultSet consulta(String sql) {
+        try {
+            Statement st = con.createStatement();
+            return st.executeQuery(sql);
+
+        } catch (SQLException ex) {
+            Logger.getLogger(ModeloConexion.class
+                    .getName()).log(Level.SEVERE, null, ex);
+            return null;
+
+        }
+    }
+
+    public boolean accion(String sql) {
+        //INSERT-UPDATE-DELETE
+
+        boolean correcto;
+
+        try {
+            Statement at = con.createStatement();
+            at.execute(sql);
+            at.close();//Cierro la conexion
+            correcto = true;
+
+        } catch (Exception e) {
+            Logger.getLogger(ModeloConexion.class
+                    .getName()).log(Level.SEVERE, null, e);
+            correcto = false;
+        }
+        return correcto;
     }
 }

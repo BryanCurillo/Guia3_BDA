@@ -8,10 +8,13 @@ package Modelo;
  *
  * @author Danie
  */
-public class Tipo_cliente {
+public class Tipo_cliente extends Persona{
     
     private int tp_id;
     private String tp_nombre;
+
+    public Tipo_cliente() {
+    }
 
     public Tipo_cliente(int tp_id, String tp_nombre) {
         this.tp_id = tp_id;

@@ -4,6 +4,8 @@
  */
 package Modelo;
 
+import java.util.Date;
+
 /**
  *
  * @author Danie
@@ -11,10 +13,23 @@ package Modelo;
 public class Factura {
     
     private int fac_id;
-    private int fac_cab_id;
+    private int fac_enc_id;
     private int fac_cue_id; 
     private int fac_pie_id; 
-    private int fac_cli_id;         
+    private Date fac_fecha;
+    private String fac_estado;
+
+    public Factura() {
+    }
+
+    public Factura(int fac_id, int fac_enc_id, int fac_cue_id, int fac_pie_id, Date fac_fecha, String fac_estado) {
+        this.fac_id = fac_id;
+        this.fac_enc_id = fac_enc_id;
+        this.fac_cue_id = fac_cue_id;
+        this.fac_pie_id = fac_pie_id;
+        this.fac_fecha = fac_fecha;
+        this.fac_estado = fac_estado;
+    }
 
     public int getFac_id() {
         return fac_id;
@@ -24,12 +39,12 @@ public class Factura {
         this.fac_id = fac_id;
     }
 
-    public int getFac_cab_id() {
-        return fac_cab_id;
+    public int getFac_enc_id() {
+        return fac_enc_id;
     }
 
-    public void setFac_cab_id(int fac_cab_id) {
-        this.fac_cab_id = fac_cab_id;
+    public void setFac_enc_id(int fac_enc_id) {
+        this.fac_enc_id = fac_enc_id;
     }
 
     public int getFac_cue_id() {
@@ -48,13 +63,22 @@ public class Factura {
         this.fac_pie_id = fac_pie_id;
     }
 
-    public int getFac_cli_id() {
-        return fac_cli_id;
+    public Date getFac_fecha() {
+        return fac_fecha;
     }
 
-    public void setFac_cli_id(int fac_cli_id) {
-        this.fac_cli_id = fac_cli_id;
+    public void setFac_fecha(Date fac_fecha) {
+        this.fac_fecha = fac_fecha;
     }
-            
+
+    public String getFac_estado() {
+        return fac_estado;
+    }
+
+    public void setFac_estado(String fac_estado) {
+        this.fac_estado = fac_estado;
+    }
+
     
+
 }

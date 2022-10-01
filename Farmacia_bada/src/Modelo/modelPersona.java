@@ -29,13 +29,6 @@ public class modelPersona extends Persona {
         return mc.accion(sql);//EJECUTAMOS EN INSERT
     }
 
-//    public boolean updatePersona() {
-//        String sql;
-//        sql = "UPDATE persona SET per_nombre='" + getNombre() + "', per_apellido='" + getApellido() + "',per_correo='" + getCorreo() + "',per_telefono='" + getTelefono() + "'"
-//                + "WHERE per_cedula='" + getCedula() + "'";
-//        return mc.accion(sql);
-//    }
-
     public boolean comprobarDuplicado(String cedula) {
         int cant = 0;
         boolean ban = true;

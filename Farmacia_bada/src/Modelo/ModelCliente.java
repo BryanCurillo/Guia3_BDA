@@ -52,6 +52,13 @@ public class ModelCliente extends Cliente {
         }
         return listaClientes;
     }
+    
+       public boolean setClientes() {
+        String sql = "INSERT INTO Cliente(cli_per_id,cli_tipo_id)  "
+                + "  VALUES ('" + getCli_per_id()+ "', " + getCli_tipo_id()+ ")";
+        return false;
+
+    }
 
 //    public List<Cliente> getClientesFac(String cedula) {
 //        List<Cliente> listaClientes = new ArrayList<>();

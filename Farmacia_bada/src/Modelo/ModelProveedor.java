@@ -15,9 +15,17 @@ import java.util.logging.Logger;
  *
  * @author Danie
  */
-public class ModelProveedor extends Persona {
+public class ModelProveedor extends Proveedor {
 
     ModeloConexion mpgc = new ModeloConexion();
+
+    public boolean setClientes() {
+        String sql = "INSERT INTO proveedor(prov_per_id,prov_nombre)  "
+                + "  VALUES ('" + getProv_per_id()+ "', '" + getProv_nombre()+ "')";
+        System.out.println(getProv_per_id());
+        return mpgc.accion(sql);
+
+    }
 
     public List<Proveedor> getProveedor() {
         List<Proveedor> listaProveedores = new ArrayList<>();

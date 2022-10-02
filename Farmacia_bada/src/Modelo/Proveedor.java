@@ -16,13 +16,6 @@ public class Proveedor extends Persona{
     private int prov_per_id;
     private String prov_nombre;
 
-    public Proveedor(int prov_id, int prov_per_id, String prov_nombre, int p_id, String p_cedula, String p_nombre, String p_apellido, Date p_fechanac, String p_telefono, String p_direccion, String p_correo) {
-        super(p_id, p_cedula, p_nombre, p_apellido, p_fechanac, p_telefono, p_direccion, p_correo);
-        this.prov_id = prov_id;
-        this.prov_per_id = prov_per_id;
-        this.prov_nombre = prov_nombre;
-    }
-
     public Proveedor() {
     }
 

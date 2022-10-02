@@ -8,6 +8,7 @@ package Main;
 import Controller.ControllerRegistroCliente;
 import Controller.controllerVenta;
 import Modelo.ModelCliente;
+import Modelo.ModeloFactura;
 import Modelo.ModelProveedor;
 import Modelo.ModelProducto;
 import Vista.VistaRegistraProducto;
@@ -37,14 +38,16 @@ public class Farmacia {
         
         ModelProducto ModelP = new ModelProducto();
         ModelProveedor ModeloPro = new ModelProveedor();
+        
         VistaRegistraProducto vistaP = new VistaRegistraProducto();
-        ControllerRegistroProductos ControllerP = new ControllerRegistroProductos(vistaP, ModelP, ModeloPro);
-        ControllerP.iniciarControl();
-
+        
+//        ControllerRegistroProductos ControllerP = new ControllerRegistroProductos(vistaP, ModelP, ModeloPro);
+//        ControllerP.iniciarControl();
+    ModeloFactura modelFac = new ModeloFactura();
         
         
-//        controllerVenta controllerV = new controllerVenta(vistaFac, modelC);
-//        controllerV.iniciarControl();
+        controllerVenta controllerV = new controllerVenta(vistaFac, modelC, ModelP, modelFac);
+        controllerV.iniciarControl();
 
     }
 

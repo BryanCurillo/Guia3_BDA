@@ -13,15 +13,15 @@ import java.util.Date;
 public class Encabezado extends Cuerpo{
 
     private int enc_id;
-    private int enc_fecha;
-    private Date enc_estadofactura;
-    private String enc_cli_id;
+    private String enc_fecha;
+    private String enc_estadofactura;
+    private int enc_cli_id;
     private int enc_numfac;
 
     public Encabezado() {
     }
 
-    public Encabezado(int enc_id, int enc_fecha, Date enc_estadofactura, String enc_cli_id, int enc_numfac) {
+    public Encabezado(int enc_id, String enc_fecha, String enc_estadofactura, int enc_cli_id, int enc_numfac) {
         this.enc_id = enc_id;
         this.enc_fecha = enc_fecha;
         this.enc_estadofactura = enc_estadofactura;
@@ -37,27 +37,27 @@ public class Encabezado extends Cuerpo{
         this.enc_id = enc_id;
     }
 
-    public int getEnc_fecha() {
+    public String getEnc_fecha() {
         return enc_fecha;
     }
 
-    public void setEnc_fecha(int enc_fecha) {
+    public void setEnc_fecha(String enc_fecha) {
         this.enc_fecha = enc_fecha;
     }
 
-    public Date getEnc_estadofactura() {
+    public String getEnc_estadofactura() {
         return enc_estadofactura;
     }
 
-    public void setEnc_estadofactura(Date enc_estadofactura) {
+    public void setEnc_estadofactura(String enc_estadofactura) {
         this.enc_estadofactura = enc_estadofactura;
     }
 
-    public String getEnc_cli_id() {
+    public int getEnc_cli_id() {
         return enc_cli_id;
     }
 
-    public void setEnc_cli_id(String enc_cli_id) {
+    public void setEnc_cli_id(int enc_cli_id) {
         this.enc_cli_id = enc_cli_id;
     }
 
@@ -69,4 +69,5 @@ public class Encabezado extends Cuerpo{
         this.enc_numfac = enc_numfac;
     }
 
+   
 }

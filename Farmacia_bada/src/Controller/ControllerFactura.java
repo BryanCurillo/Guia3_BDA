@@ -20,7 +20,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Danie
  */
-public class ControllerRegistroProductos {
+public class ControllerFactura {
 
     private VistaRegistraProducto vrp;
     private ModelProducto mc;
@@ -32,7 +32,7 @@ public class ControllerRegistroProductos {
     validaciones mivalidacion = new validaciones();
  SimpleDateFormat formatofecha = new SimpleDateFormat("dd/MM/yyyy");
  
-    public ControllerRegistroProductos(VistaRegistraProducto vrp, ModelProducto mc, ModelProveedor mp) {
+    public ControllerFactura(VistaRegistraProducto vrp, ModelProducto mc, ModelProveedor mp) {
         this.vrp = vrp;
         this.mc = mc;
         this.mp = mp;
@@ -42,7 +42,7 @@ public class ControllerRegistroProductos {
 
     }
 
-    public ControllerRegistroProductos() {
+    public ControllerFactura() {
 
     }
 
@@ -95,7 +95,7 @@ public class ControllerRegistroProductos {
 
     }
 
-    public void cargarDatosDlgProv(int opc) {
+    public void cargarDatosDlgCli(int opc) {
 
         vrp.getTabladlg().setRowHeight(25);
         estructuraTabla = (DefaultTableModel) vrp.getTabladlg().getModel();
@@ -146,7 +146,7 @@ public class ControllerRegistroProductos {
     public void abrirDlgCli() {
         vrp.getDlgCliente().setLocationRelativeTo(vrp);
         vrp.getDlgCliente().setVisible(true);
-        cargarDatosDlgProv(1);
+        cargarDatosDlgCli(1);
     }
 
     public boolean validar() {

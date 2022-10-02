@@ -30,7 +30,7 @@ public class ModeloConexion {
         try {
             Class.forName(DRIVER);
             con = DriverManager.getConnection(URL, USER, PASWORD);
-            System.out.println("conexion exitosa");
+//            System.out.println("conexion exitosa");
         } catch (ClassNotFoundException | SQLException ex) {
             System.out.println("error: " + ex.getLocalizedMessage());
             Logger.getLogger(ModeloConexion.class.getName()).log(Level.SEVERE, null, ex);

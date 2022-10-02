@@ -39,7 +39,6 @@ public class ModelCliente extends Cliente {
                 c.setP_telefono(rs.getString(10));
                 c.setTp_id(rs.getInt(11));
                 c.setTp_nombre(rs.getString(12));
-                System.out.println("cedula= "+c.getP_cedula());
                 listaClientes.add(c);
             }
         } catch (SQLException e) {

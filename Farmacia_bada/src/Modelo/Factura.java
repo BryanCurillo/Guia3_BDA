@@ -16,14 +16,16 @@ public class Factura extends Pie{
     private int fac_enc_id;
     private int fac_cue_id; 
     private int fac_pie_id; 
-    private Date fac_fecha;
+    private String fac_fecha;
     private String fac_estado;
     private double fac_subtotal;
+    private double fac_IVA;
+    private double fac_TOTAL;
 
     public Factura() {
     }
 
-    public Factura(int fac_id, int fac_enc_id, int fac_cue_id, int fac_pie_id, Date fac_fecha, String fac_estado, double fac_subtotal) {
+    public Factura(int fac_id, int fac_enc_id, int fac_cue_id, int fac_pie_id, String fac_fecha, String fac_estado, double fac_subtotal, double fac_IVA, double fac_TOTAL) {
         this.fac_id = fac_id;
         this.fac_enc_id = fac_enc_id;
         this.fac_cue_id = fac_cue_id;
@@ -31,7 +33,28 @@ public class Factura extends Pie{
         this.fac_fecha = fac_fecha;
         this.fac_estado = fac_estado;
         this.fac_subtotal = fac_subtotal;
+        this.fac_IVA = fac_IVA;
+        this.fac_TOTAL = fac_TOTAL;
     }
+
+
+
+    public double getFac_IVA() {
+        return fac_IVA;
+    }
+
+    public void setFac_IVA(double fac_IVA) {
+        this.fac_IVA = fac_IVA;
+    }
+
+    public double getFac_TOTAL() {
+        return fac_TOTAL;
+    }
+
+    public void setFac_TOTAL(double fac_TOTAL) {
+        this.fac_TOTAL = fac_TOTAL;
+    }
+
 
     public int getFac_id() {
         return fac_id;
@@ -65,11 +88,11 @@ public class Factura extends Pie{
         this.fac_pie_id = fac_pie_id;
     }
 
-    public Date getFac_fecha() {
+    public String getFac_fecha() {
         return fac_fecha;
     }
 
-    public void setFac_fecha(Date fac_fecha) {
+    public void setFac_fecha(String fac_fecha) {
         this.fac_fecha = fac_fecha;
     }
 

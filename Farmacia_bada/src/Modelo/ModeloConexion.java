@@ -11,16 +11,16 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Danie
  */
 public class ModeloConexion {
-
-    private final String DRIVER = "oracle.jdbc.driver.OracleDriver";
+private final String DRIVER = "oracle.jdbc.driver.OracleDriver";
     private final String URL = "jdbc:oracle:thin:@localhost:1521:XE";
-    private final String USER = "bryanGuia3";
+    private final String USER = "andy";
     private final String PASWORD = "1234";
 
     private Connection con;
@@ -68,4 +68,6 @@ public class ModeloConexion {
         }
         return correcto;
     }
+  
+
 }

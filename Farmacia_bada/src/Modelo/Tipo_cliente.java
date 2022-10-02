@@ -36,7 +36,6 @@ public class Tipo_cliente extends Persona{
     public void setTp_nombre(String tp_nombre) {
         this.tp_nombre = tp_nombre;
     }
-    
-    
+
     
 }

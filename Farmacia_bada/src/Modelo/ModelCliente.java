@@ -55,9 +55,34 @@ public class ModelCliente extends Cliente {
     
        public boolean setClientes() {
         String sql = "INSERT INTO Cliente(cli_per_id,cli_tipo_id)  "
-                + "  VALUES ('" + getCli_per_id()+ "', " + getCli_tipo_id()+ ")";
-        return false;
+                + "  VALUES ('" + getCli_per_id()+ "', '" + getCli_tipo_id()+"')";
+           System.out.println(getCli_per_id());      
+        return mc.accion(sql);
+        
 
+    }
+        public boolean comprobarDuplicado(String cedula) {
+        int cant = 0;
+        boolean ban = true;
+
+        String sql = "select count(*) from persona where p_cedula= '" + cedula + "'";
+        ResultSet rs = mc.consulta(sql);
+        try {
+            while (rs.next()) {
+                cant = rs.getInt(1);
+            }
+        } catch (SQLException e) {
+            Logger.getLogger(ModelCliente.class.getName()).log(Level.SEVERE, null, e);
+        }
+        try {
+            if (cant!=0) {
+                ban=false;
+            }
+            rs.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(ModelCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return ban;
     }
 
 //    public List<Cliente> getClientesFac(String cedula) {

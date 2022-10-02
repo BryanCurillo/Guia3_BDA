@@ -5,6 +5,11 @@
  */
 package Main;
 
+import Controller.ControllerRegistroCliente;
+import Modelo.ModelCliente;
+import Vista.VistaRegistrarCli;
+import Vista.vista_factura;
+
 /**
  *
  * @author carlos
@@ -16,6 +21,13 @@ public class Farmacia {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+      ModelCliente modelC = new ModelCliente();
+      VistaRegistrarCli vista = new VistaRegistrarCli();
+      ControllerRegistroCliente controllerC = new ControllerRegistroCliente(vista, modelC);
+      controllerC.iniciarControl();
+
+       
     }
     
 }

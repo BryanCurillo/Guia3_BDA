@@ -6,8 +6,10 @@
 package Main;
 
 import Controller.ControllerRegistroCliente;
+import Controller.controllerVenta;
 import Modelo.ModelCliente;
 import Vista.VistaRegistrarCli;
+import Vista.vista_factura;
 import Vista.vista_factura;
 
 /**
@@ -21,13 +23,16 @@ public class Farmacia {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        
-      ModelCliente modelC = new ModelCliente();
-      VistaRegistrarCli vista = new VistaRegistrarCli();
-      ControllerRegistroCliente controllerC = new ControllerRegistroCliente(vista, modelC);
-      controllerC.iniciarControl();
 
-       
+        ModelCliente modelC = new ModelCliente();
+        VistaRegistrarCli vista = new VistaRegistrarCli();
+//        ControllerRegistroCliente controllerC = new ControllerRegistroCliente(vista, modelC);
+//        controllerC.iniciarControl();
+
+        vista_factura vistaFac = new vista_factura();
+        controllerVenta controllerV = new controllerVenta(vistaFac, modelC);
+        controllerV.iniciarControl();
+
     }
-    
+
 }

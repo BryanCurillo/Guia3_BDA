@@ -8,6 +8,10 @@ package Main;
 import Controller.ControllerRegistroCliente;
 import Controller.controllerVenta;
 import Modelo.ModelCliente;
+import Modelo.ModelProveedor;
+import Modelo.ModelProducto;
+import Vista.VistaRegistraProducto;
+import Controller.ControllerRegistroProductos;
 import Vista.VistaRegistrarCli;
 import Vista.vista_factura;
 import Vista.vista_factura;
@@ -30,8 +34,17 @@ public class Farmacia {
 //        controllerC.iniciarControl();
 
         vista_factura vistaFac = new vista_factura();
-        controllerVenta controllerV = new controllerVenta(vistaFac, modelC);
-        controllerV.iniciarControl();
+        
+        ModelProducto ModelP = new ModelProducto();
+        ModelProveedor ModeloPro = new ModelProveedor();
+        VistaRegistraProducto vistaP = new VistaRegistraProducto();
+        ControllerRegistroProductos ControllerP = new ControllerRegistroProductos(vistaP, ModelP, ModeloPro);
+        ControllerP.iniciarControl();
+
+        
+        
+//        controllerVenta controllerV = new controllerVenta(vistaFac, modelC);
+//        controllerV.iniciarControl();
 
     }
 

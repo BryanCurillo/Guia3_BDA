@@ -60,8 +60,7 @@ public class ControllerRegistroCliente {
             Persona.setP_correo(correo);
             Persona.setP_telefono(telefono);
             Persona.setP_direccion(direccion);
-
-//            if (vrc.getName().equals("Registro")) {                
+            
             int response = JOptionPane.showConfirmDialog(vrc, "¿Agregar cliente?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
             System.out.println("PERSONA ID == " + Persona.ObtenerId());
             ModelCliente Cli = new ModelCliente();
@@ -90,7 +89,7 @@ public class ControllerRegistroCliente {
         }
 
     }
-//    }
+
 
     public boolean validar() {
         boolean ban = true;

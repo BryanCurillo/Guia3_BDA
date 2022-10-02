@@ -65,7 +65,6 @@ public class validaciones {
 //
 //        return validar;
 //    }
-
     public boolean validarCedula(String cedula) {
         boolean val = false;
 //        boolean val = true;
@@ -179,4 +178,5 @@ public class validaciones {
         return validar;
     }
 
+    
 }//final de clase

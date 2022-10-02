@@ -8,15 +8,15 @@ package Modelo;
  *
  * @author Danie
  */
-public class ModelProducto extends Producto{
-    
-        ModeloConexion mpgc = new ModeloConexion();
+public class ModelProducto extends Producto {
+
+    ModeloConexion mc = new ModeloConexion();
 
     public boolean setProducto() {
-        String sql = "INSERT INTO Producto(pro_nombre,pro_descripcion,pro_precio,pro_stock,pro_fechacaducidad,pro_prov_id)  "
-                + "  VALUES ('" + getPro_nombre()+ "', " + getPro_descripcion()+ ")" + getProd_precio()+ ")"+ getProd_stock()+ ")"+ getProd_fec_cad()+ ")"+ getProd_prov_id()+ ")";
-        return false;
-
+        System.out.println("PRODUCTOFECHA="+getProd_fec_cadStr());
+        String sql = "insert into PRODUCTO (pro_nombre,pro_descripcion,pro_precio,pro_stock,pro_fechacaducidad,pro_prov_id)  "
+                + "  values ('" + getPro_nombre() + "','" + getPro_descripcion() + "'," + getProd_precio() + "," + getProd_stock() + ",'" + getProd_fec_cadStr()+ "'," + getProd_prov_id() + ")";
+        return mc.accion(sql);
     }
-    
+
 }

@@ -8,16 +8,16 @@ package Modelo;
  *
  * @author Danie
  */
-public class ModeloFactura extends Factura{
-    
-        ModeloConexion mpgc = new ModeloConexion();
+public class ModeloFactura extends Factura {
+
+    ModeloConexion mpgc = new ModeloConexion();
 
     public boolean setFactura() {
         String sql = "INSERT INTO Factura(fac_enc_id, fac_cue_id, fac_pie_id, fac_fecha, fac_estado)  "
-                + "  VALUES ('" + getFac_enc_id()+ "', " + getFac_cue_id()+ ")" + getFac_pie_id()+ ")"+ getFac_fecha()+ ")"+ getFac_estado()+ ")";
+                + "  VALUES ('" + getFac_enc_id() + "', " + getFac_cue_id() + ")" + getFac_pie_id() + ")" + getFac_fecha() + ")" + getFac_estado() + ")";
 
         return mpgc.accion(sql);
-    
-}
-    
+
+    }
+
 }

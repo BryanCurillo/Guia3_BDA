@@ -16,22 +16,29 @@ import java.util.logging.Logger;
  * @author Danie
  */
 public class ModelProveedor extends Persona {
-    
-        ModeloConexion mpgc = new ModeloConexion();
 
-  
-       public List<Proveedor> getProveedor() {
+    ModeloConexion mpgc = new ModeloConexion();
+
+    public List<Proveedor> getProveedor() {
         List<Proveedor> listaProveedores = new ArrayList<>();
-        String sql = "SELECT * FROM proveedor";
+        String sql = "SELECT * from proveedor prov join persona per on (prov.prov_per_id = per.p_id)";
         ResultSet rs = mpgc.consulta(sql);
         try {
             while (rs.next()) {
                 Proveedor miprov = new Proveedor();
-                
+
                 miprov.setProv_id(rs.getInt(1));
-                miprov.setProv_nombre(rs.getString(2));
-                miprov.setProv_per_id(rs.getInt(3));
-                System.out.println(miprov.getProv_nombre());
+                miprov.setProv_per_id(rs.getInt(2));
+                miprov.setProv_nombre(rs.getString(3));
+
+                miprov.setP_id(rs.getInt(4));
+                miprov.setP_cedula(rs.getString(5));
+                miprov.setP_nombre(rs.getString(6));
+                miprov.setP_apellido(rs.getString(7));
+                miprov.setP_correo(rs.getString(8));
+                miprov.setP_direccion(rs.getString(9));
+                miprov.setP_telefono(rs.getString(10));
+
                 listaProveedores.add(miprov);
             }
         } catch (SQLException e) {

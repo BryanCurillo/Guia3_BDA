@@ -18,9 +18,10 @@ import javax.swing.JOptionPane;
  * @author Danie
  */
 public class ModeloConexion {
-private final String DRIVER = "oracle.jdbc.driver.OracleDriver";
+
+    private final String DRIVER = "oracle.jdbc.driver.OracleDriver";
     private final String URL = "jdbc:oracle:thin:@localhost:1521:XE";
-    private final String USER = "andy";
+    private final String USER = "bryanGuia3";
     private final String PASWORD = "1234";
 
     private Connection con;
@@ -31,7 +32,7 @@ private final String DRIVER = "oracle.jdbc.driver.OracleDriver";
             con = DriverManager.getConnection(URL, USER, PASWORD);
             System.out.println("conexion exitosa");
         } catch (ClassNotFoundException | SQLException ex) {
-            System.out.println("error: "+ex.getLocalizedMessage());
+            System.out.println("error: " + ex.getLocalizedMessage());
             Logger.getLogger(ModeloConexion.class.getName()).log(Level.SEVERE, null, ex);
         }
 
@@ -61,13 +62,17 @@ private final String DRIVER = "oracle.jdbc.driver.OracleDriver";
             at.close();//Cierro la conexion
             correcto = true;
 
-        } catch (Exception e) {
-            Logger.getLogger(ModeloConexion.class
-                    .getName()).log(Level.SEVERE, null, e);
+        } catch (SQLException e) {
+            if (e.getErrorCode() == 20001) {
+                JOptionPane.showMessageDialog(null, "El producto se encuentra caducado", "Alerta de caducidad", 0);
+            } else {
+
+                Logger.getLogger(ModeloConexion.class
+                        .getName()).log(Level.SEVERE, null, e);
+            }
             correcto = false;
         }
         return correcto;
     }
-  
 
 }

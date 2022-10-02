@@ -30,8 +30,8 @@ public class ControllerRegistroProductos {
     private ModelProveedor mp;
     int i = 0;
     validaciones mivalidacion = new validaciones();
- SimpleDateFormat formatofecha = new SimpleDateFormat("dd/MM/yyyy");
- 
+    SimpleDateFormat formatofecha = new SimpleDateFormat("dd/MM/yyyy");
+
     public ControllerRegistroProductos(VistaRegistraProducto vrp, ModelProducto mc, ModelProveedor mp) {
         this.vrp = vrp;
         this.mc = mc;
@@ -61,15 +61,15 @@ public class ControllerRegistroProductos {
                     descripcion = vrp.getTxtdescripcion().getText();
             double precio = mivalidacion.validarDouble(vrp.getTxtprecio1().getText());
             int cantidad = (int) vrp.getTxtcantidad().getValue();
-            
+
             Date fechaCad = vrp.getTxtfecha().getDate();
             long d = fechaCad.getTime(); //guardamos en un long el tiempo
             java.sql.Date fechaCaducidad = new java.sql.Date(d);// parseamos al formato del sql  
-            
+
             int proveedor = Integer.parseInt(vrp.getTxtprovID().getText());
 
             ModelProducto producto = new ModelProducto();
-            
+
             producto.setPro_nombre(nombre);
             producto.setPro_descripcion(descripcion);
             producto.setProd_precio(precio);
@@ -83,7 +83,8 @@ public class ControllerRegistroProductos {
                 if (producto.setProducto()) {
 
                     JOptionPane.showMessageDialog(vrp, "Producto agregado/a correctamente");
-                    vrp.dispose();
+                    //                    vrp.dispose();
+                    limpiarCampos();
                 } else {
                     JOptionPane.showMessageDialog(vrp, "No se pudo agregar al Producto");
                 }
@@ -167,4 +168,17 @@ public class ControllerRegistroProductos {
 
     }
 
+    public void limpiarCampos() {
+        vrp.getTxtnombre().setText("");
+        vrp.getTxtdescripcion().setText("");
+        vrp.getTxtprecio1().setText("");
+        vrp.getTxtcantidad().setValue(0);
+        vrp.getTxtfecha().setDate(null);
+        vrp.getTxtprovCedula().setText("");
+        vrp.getTxtprovnombre().setText("");
+        vrp.getTxtprovtelefono().setText("");
+        vrp.getTxtprovempresa().setText("");
+        vrp.getTxtprovcorreo().setText("");
+
+    }
 }

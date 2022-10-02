@@ -4,24 +4,13 @@
  */
 package Controller;
 
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import javax.swing.JOptionPane;
 
-import Modelo.ModeloConexion;
 import Vista.vista_factura;
 import Modelo.Cliente;
 import Modelo.ModelCliente;
-import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 
 /**

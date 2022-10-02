@@ -60,7 +60,7 @@ public class ControllerRegistroCliente {
             Persona.setP_correo(correo);
             Persona.setP_telefono(telefono);
             Persona.setP_direccion(direccion);
-            
+
             int response = JOptionPane.showConfirmDialog(vrc, "¿Agregar cliente?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
             System.out.println("PERSONA ID == " + Persona.ObtenerId());
             ModelCliente Cli = new ModelCliente();
@@ -73,9 +73,11 @@ public class ControllerRegistroCliente {
                         Cli.setCli_per_id(Persona.ObtenerId());
                         System.out.println("Si ingreso");
                         Cli.setClientes();
-                        
+
                         JOptionPane.showMessageDialog(vrc, "Cliente agregado/a correctamente");
-                        vrc.dispose();
+//                        vrc.dispose();
+                        limpiarCampos();
+
                     } else {
                         JOptionPane.showMessageDialog(vrc, "No se pudo agregar al cliente");
                     }
@@ -90,6 +92,15 @@ public class ControllerRegistroCliente {
 
     }
 
+    public void limpiarCampos() {
+        vrc.getTxt_cedula().setText("");
+        vrc.getTxtnombre().setText("");
+        vrc.getTxtapellido().setText("");
+        vrc.getTxtcorreo().setText("");
+        vrc.getTxtdireccion().setText("");
+        vrc.getTxttelefono().setText("");
+        vrc.getCmb_tipo().setSelectedIndex(0);
+    }
 
     public boolean validar() {
         boolean ban = true;

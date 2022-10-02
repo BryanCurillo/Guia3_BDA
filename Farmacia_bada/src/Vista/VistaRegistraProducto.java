@@ -56,7 +56,6 @@ public class VistaRegistraProducto extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         btnseleccionar = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         txtnombre = new javax.swing.JTextField();
@@ -64,8 +63,6 @@ public class VistaRegistraProducto extends javax.swing.JFrame {
         txtdescripcion = new javax.swing.JTextArea();
         txtprovnombre = new javax.swing.JTextField();
         txtfecha = new com.toedter.calendar.JDateChooser();
-        btnregistrar = new javax.swing.JButton();
-        Btcancelar = new javax.swing.JButton();
         txtcantidad = new javax.swing.JSpinner();
         lbl_prv = new javax.swing.JLabel();
         txtprecio1 = new javax.swing.JTextField();
@@ -78,6 +75,10 @@ public class VistaRegistraProducto extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        btnregistrar = new javax.swing.JButton();
+        Btcancelar = new javax.swing.JButton();
 
         DlgCliente.setSize(new java.awt.Dimension(545, 310));
         DlgCliente.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -148,33 +149,36 @@ public class VistaRegistraProducto extends javax.swing.JFrame {
         DlgCliente.getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 690, 340));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(225, 255, 177));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel1.setText("REGISTRAR PRODUCTO");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(97, 22, -1, -1));
 
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setText("Nombre del Producto");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(97, 127, -1, -1));
 
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setText("Descripcion");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(97, 164, 79, -1));
 
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setText("Correo:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 290, 40, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 300, 60, -1));
 
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setText("Cantidad");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 320, 57, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 320, 80, -1));
 
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel6.setText("Fecha de Caducidad");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 350, 120, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 350, 160, -1));
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel7.setText("Proveedor");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 110, 100, -1));
-
-        btnseleccionar.setText("jButton1");
-        getContentPane().add(btnseleccionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 120, -1, -1));
+        btnseleccionar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnseleccionar.setText("Seleccionar");
+        getContentPane().add(btnseleccionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 350, -1, -1));
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 410, 75, 21));
         getContentPane().add(txtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(281, 124, 214, -1));
 
@@ -183,43 +187,80 @@ public class VistaRegistraProducto extends javax.swing.JFrame {
         jScrollPane1.setViewportView(txtdescripcion);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(281, 164, -1, 103));
-        getContentPane().add(txtprovnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 200, 160, -1));
-        getContentPane().add(txtfecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(345, 350, 150, -1));
+        getContentPane().add(txtprovnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 180, 160, -1));
+        getContentPane().add(txtfecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(343, 350, 150, -1));
+        getContentPane().add(txtcantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(343, 320, 150, -1));
+        getContentPane().add(lbl_prv, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 40, -1, -1));
+        getContentPane().add(txtprecio1, new org.netbeans.lib.awtextra.AbsoluteConstraints(283, 280, 210, -1));
+        getContentPane().add(txtprovCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 140, 160, -1));
+        getContentPane().add(txtprovtelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 220, 160, -1));
+        getContentPane().add(txtprovempresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 260, 160, -1));
+        getContentPane().add(txtprovcorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 300, 160, -1));
 
-        btnregistrar.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel9.setText("Precio");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 290, 80, -1));
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel10.setText("Cedula:");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 140, 60, -1));
+
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel11.setText("Nombre:");
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 180, 70, -1));
+
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel12.setText("Telefono:");
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 220, 70, -1));
+
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel13.setText("Empresa:");
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 260, 70, -1));
+
+        jPanel1.setBackground(new java.awt.Color(225, 255, 177));
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel7.setText("Proveedor");
+
+        btnregistrar.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         btnregistrar.setText("Registrar");
         btnregistrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnregistrarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnregistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 430, -1, -1));
 
-        Btcancelar.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        Btcancelar.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         Btcancelar.setText("Cancelar");
-        getContentPane().add(Btcancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 440, -1, -1));
-        getContentPane().add(txtcantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(344, 320, 150, -1));
-        getContentPane().add(lbl_prv, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 40, -1, -1));
-        getContentPane().add(txtprecio1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 280, 210, -1));
-        getContentPane().add(txtprovCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 170, 160, -1));
-        getContentPane().add(txtprovtelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 230, 160, -1));
-        getContentPane().add(txtprovempresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 260, 160, -1));
-        getContentPane().add(txtprovcorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 290, 160, -1));
 
-        jLabel9.setText("Precio");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 290, 37, -1));
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(171, 171, 171))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(369, 369, 369)
+                .addComponent(btnregistrar)
+                .addGap(98, 98, 98)
+                .addComponent(Btcancelar)
+                .addContainerGap(334, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(47, 47, 47)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 317, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnregistrar)
+                    .addComponent(Btcancelar))
+                .addGap(50, 50, 50))
+        );
 
-        jLabel10.setText("Cedula:");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(667, 170, 40, -1));
-
-        jLabel11.setText("Nombre:");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 200, 50, -1));
-
-        jLabel12.setText("Telefono:");
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 230, 50, -1));
-
-        jLabel13.setText("Empresa:");
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 260, 50, -1));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1060, 500));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -283,6 +324,7 @@ public class VistaRegistraProducto extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;

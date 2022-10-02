@@ -10,7 +10,7 @@ import java.util.Date;
  *
  * @author Danie
  */
-public class Encabezado {
+public class Encabezado extends Cuerpo{
 
     private int enc_id;
     private int enc_fecha;

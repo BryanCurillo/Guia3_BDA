@@ -8,12 +8,22 @@ package Modelo;
  *
  * @author Danie
  */
-public class Pie {
+public class Pie extends Cuerpo{
     
     private int pie_id;
     private double pie_subtotal;
     private double pie_iva;
     private double pie_total;
+
+    public Pie() {
+    }
+
+    public Pie(int pie_id, double pie_subtotal, double pie_iva, double pie_total) {
+        this.pie_id = pie_id;
+        this.pie_subtotal = pie_subtotal;
+        this.pie_iva = pie_iva;
+        this.pie_total = pie_total;
+    }
 
     public int getPie_id() {
         return pie_id;
@@ -46,6 +56,6 @@ public class Pie {
     public void setPie_total(double pie_total) {
         this.pie_total = pie_total;
     }
-    
-    
+
+  
 }

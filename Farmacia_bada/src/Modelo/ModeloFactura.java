@@ -4,12 +4,14 @@
  */
 package Modelo;
 
+import java.sql.CallableStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -70,7 +72,7 @@ public class ModeloFactura extends Factura {
                 + "from factura f join cuerpo c on(c.cue_id= f.fac_cue_id) "
                 + "join encabezado e on(e.enc_id= f.fac_enc_id) "
                 + "join producto pro on(pro.pro_id=c.cue_prod_id) "
-                + "where f.fac_id= "+ idFac
+                + "where f.fac_id= " + idFac
                 + "order by f.fac_id";
         ResultSet rs = mc.consulta(sql);
         try {
@@ -102,12 +104,6 @@ public class ModeloFactura extends Factura {
         return listaFacturas;
     }
 
-    public boolean procesarPago(int idFac) {
-
-        String sql = "exec FACTURA_FINAL(" + idFac + ")";
-        return mc.accion(sql);//EJECUTAMOS EN DELETE
-    }
-
     public int ObtenerId() {
         int cant = 0;
 
@@ -128,5 +124,30 @@ public class ModeloFactura extends Factura {
         }
         return cant;
 
+    }
+
+    public boolean executeFac(int idFac) {
+        try {
+            //EN EL CASO DE TENER SALIDA
+//            ? = call FACTURA_FINAL(?)   la primera es de salida
+            CallableStatement cstmt = mc.getCon().prepareCall("call FACTURA_FINAL(?)");
+            //variable de entrada
+            cstmt.setInt(1, idFac);
+
+            //variable de salida
+//            cstmt.registerOutParameter(1, OracleType.NUMBER);
+            System.out.println("CANCELADA");
+            JOptionPane.showMessageDialog(null, "Factura cancelada");
+
+            return cstmt.execute();
+
+        } catch (SQLException ex) {
+            if (ex.getErrorCode() == 20002) {
+                JOptionPane.showMessageDialog(null, "La factura ya se encuentra cancelada", "Estado de Pago", 0);
+            } else {
+                Logger.getLogger(ModeloConexion.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            return false;
+        }
     }
 }

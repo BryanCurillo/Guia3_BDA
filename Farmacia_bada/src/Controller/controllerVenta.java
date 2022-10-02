@@ -147,7 +147,8 @@ public class controllerVenta {
     }
 
     public void procesarPago(){
-        modelFactura.procesarPago(modelFactura.ObtenerId());
+        modelFactura.executeFac(modelFactura.ObtenerId());
+
     }
     
     

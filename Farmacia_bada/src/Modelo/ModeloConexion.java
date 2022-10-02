@@ -12,6 +12,8 @@ import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import java.sql.CallableStatement;
+import oracle.jdbc.OracleType;
 
 /**
  *
@@ -75,4 +77,31 @@ public class ModeloConexion {
         return correcto;
     }
 
+    public boolean execute(int idFac) {
+        try {
+            //EN EL CASO DE TENER SALIDA
+//            ? = call FACTURA_FINAL(?)   la primera es de salida
+            CallableStatement cstmt = con.prepareCall("call FACTURA_FINAL(?)");
+            //variable de entrada
+            cstmt.setInt(1, idFac);
+
+            //variable de salida
+//            cstmt.registerOutParameter(1, OracleType.NUMBER);
+            return cstmt.execute();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(ModeloConexion.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
+    }
+
+    public Connection getCon() {
+        return con;
+    }
+
+    public void setCon(Connection con) {
+        this.con = con;
+    }
+    
+    
 }

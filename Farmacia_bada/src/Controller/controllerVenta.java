@@ -83,6 +83,7 @@ public class controllerVenta {
         if (vistaFac.getTabladlg().getSelectedRow() == -1) {
             JOptionPane.showMessageDialog(vistaFac.getTabladlg(), "No ha seleccionado ningun cliente");
         } else {
+            
 //            vistaRegDieta.getTxtidAlimentoNB().setVisible(false);
 //            vistaRegDieta.getTxtidAnimalNB().setVisible(false);
 //            vistaRegDieta.getTxtidDietaNB().setVisible(false);

@@ -4,11 +4,10 @@
  */
 package Controller;
 
-import Modelo.ModelCliente;
+import Vista.VistaRegistrarProveedor;
 import Modelo.ModelProveedor;
 import Modelo.modelPersona;
 import Modelo.validaciones;
-import Vista.VistaRegistrarProveedor;
 import java.time.LocalDate;
 import java.util.Date;
 import javax.swing.JOptionPane;

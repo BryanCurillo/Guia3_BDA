@@ -5,11 +5,11 @@
 package Controller;
 
 import Modelo.Cliente;
+import Vista.VistaRegistraProducto;
 import Modelo.ModelProducto;
 import Modelo.ModelProveedor;
 import Modelo.Proveedor;
 import Modelo.validaciones;
-import Vista.VistaRegistraProducto;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;

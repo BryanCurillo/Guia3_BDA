@@ -10,6 +10,7 @@ import Modelo.Producto;
 import Modelo.Proveedor;
 import Vista.VistaVerProductos;
 import Vista.VistaVerProveedores;
+import Modelo.ModelProveedor;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;

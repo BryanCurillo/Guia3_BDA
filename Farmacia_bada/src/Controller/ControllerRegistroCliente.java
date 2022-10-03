@@ -3,12 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Controller;
-
+import Vista.VistaRegistrarCli;
 import Modelo.ModelCliente;
 import Modelo.Persona;
 import Modelo.modelPersona;
 import Modelo.validaciones;
-import Vista.VistaRegistrarCli;
+
 import java.time.LocalDate;
 import java.util.Date;
 import javax.swing.JOptionPane;

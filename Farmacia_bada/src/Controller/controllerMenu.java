@@ -15,6 +15,11 @@ import Modelo.ModelProveedor;
 import Modelo.ModelProducto;
 import Modelo.Producto;
 import Vista.VistaVerProductos;
+import Modelo.ModelCliente;
+import Modelo.ModelProducto;
+import Modelo.ModeloFactura;
+import Vista.vista_factura;
+
 
 import Vista.Menu;
 
@@ -38,6 +43,12 @@ public class controllerMenu {
 
     public void iniciaControl() {
         vista.getBtnRegistroCliente().addActionListener(l -> registroEmpleado());
+        vista.getBtnRegistroProducto().addActionListener(l->registroProducto());
+        vista.getBtnRegistroProveedor().addActionListener(l->registroProveedor());
+        vista.getBtnVistaFACTURACION().addActionListener(l->facturacion());
+        vista.getBtnVistaProducto().addActionListener(l->VistaProducto());
+        vista.getBtnVistaProveedor().addActionListener(l->VistaProv());
+        
 //
 //        ////BOTONES
 
@@ -100,4 +111,15 @@ public class controllerMenu {
         controlVProd.inicialControl();
     }
 
+    public void facturacion() {
+        //Instancio las clases del modelo y la vista
+        ModelCliente modeloCli = new ModelCliente();
+        ModelProducto modelProd = new ModelProducto();
+        ModeloFactura modelFac = new ModeloFactura();
+        vista_factura vistaFac = new vista_factura();
+
+        //Agragar vista al desktop pane
+        controllerVenta controlVenta = new controllerVenta(vistaFac, modeloCli, modelProd, modelFac);
+        controlVenta.iniciarControl();
+    }
 }

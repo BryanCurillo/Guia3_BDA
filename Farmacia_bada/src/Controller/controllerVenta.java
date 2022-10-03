@@ -8,16 +8,18 @@ import java.text.SimpleDateFormat;
 import java.util.List;
 import javax.swing.JOptionPane;
 
-import Vista.vista_factura;
+
 import Modelo.Cliente;
 import Modelo.Factura;
 import Modelo.Producto;
+import Vista.vista_factura;
 import Modelo.ModelCliente;
+import Modelo.ModelProducto;
+import Modelo.ModeloFactura;
 import Modelo.ModeloEncabezado;
 import Modelo.ModeloCuerpo;
 import Modelo.ModeloPie;
-import Modelo.ModeloFactura;
-import Modelo.ModelProducto;
+
 import java.time.LocalDate;
 import java.util.Date;
 import javax.swing.table.DefaultTableModel;
